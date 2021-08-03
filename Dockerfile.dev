@@ -1,0 +1,26 @@
+# Development docker file
+
+FROM python:3.8-slim-buster
+
+ENV PYTHONDONTWRITEBYTECODE=1
+
+RUN apt-get update
+RUN apt-get install nodejs npm -y
+
+ENV PYTHONUNBUFFERED=1
+
+RUN pip install pipenv
+
+WORKDIR /app
+COPY . /app
+
+RUN pipenv install --system --deploy --ignore-pipfile --dev
+
+RUN npm install nodemon -g
+
+VOLUME [ "/app/data", "/app/src" ]
+RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /app
+USER appuser
+
+ENV PYTHONPATH=/app
+CMD ["nodemon", "src/Main.py"]

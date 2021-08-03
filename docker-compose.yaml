@@ -1,0 +1,12 @@
+# This DockerFile creates a build ready image for DockerHub
+version: '3.4'
+
+services:
+    retardedbot:
+        image: activeswaucer/retardedbot
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        volumes:
+            - ./data:/app/data
+        env_file: .env
