@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+"discord.py" = "*"
+requests = "*"
+aiohttp = "*"
+
+[dev-packages]
+pytest = "*"
+autopep8 = "*"
+python-dotenv = "*"
+flake8 = "*"
+pytest-env = "*"
+
+[requires]
+python_version = "3.8"
+
+[scripts]
+test = "pytest"
+start = "python -m src.Main.py"

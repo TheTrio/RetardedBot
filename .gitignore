@@ -1,0 +1,7 @@
+.vscode
+__pycache__
+.env
+.venv
+.pytest_cache
+data
+logs.txt
