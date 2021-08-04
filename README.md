@@ -4,8 +4,9 @@ A silly Discord Bot I made
 
 ## Set up debugging
 
+
+`tasks.json`
 ```
-// tasks.json
 {
     "version": "2.0.0",
     "tasks": [
