@@ -64,18 +64,6 @@ jobs:
           creds: ${{secrets.AZURE_CREDENTIALS}}
           enable-AzPSSession: true
       - name: "Deploy to Azure Container Instances"
-        uses: "azure/aci-deploy@v1"
-        with:
-          resource-group: RetardedBot_group
-          image: activeswaucer/retardedbot
-          name: retardedbotdevelopment
-          location: east us
-          azure-file-volume-share-name: test
-          azure-file-volume-account-name: retardedstorage
-          azure-file-volume-account-key: ${{ secrets.AZURE_FILE_VOLUME_KEY }}
-          azure-file-volume-mount-path: /app/data
-          memory: 1
-          cpu: 1
-          osType: Linux
-          secure-environment-variables: DISCORD_API_TOKEN=${{ secrets.DISCORD_API_TOKEN }} TENOR_API_KEY=${{ secrets.TENOR_API_KEY }} UNSPLASH_API_KEY=${{ secrets.UNSPLASH_API_KEY }}
-          environment-variables: kataria_id=785173683169263676 potter_id=785992065967849543 sarvesh_id=785342148040065044 tanay_id=430750289172103168 vroon_id=785945182201315350 ishiboi_id=783603068607528991 modi_id=760565120782303283 shashwat_id=347980176392585216 tushar_id=785231710638833714 ENVIRONMENT=DEVELOPMENT
+        run: |
+          az container stop --name retardedbot --resource-group RetardedBot_group
+          az container start --name retardedbot --resource-group RetardedBot_group
