@@ -10,7 +10,7 @@ RUN pip install pipenv
 WORKDIR /app
 COPY . /app
 
-RUN pipenv install --system --deploy --ignore-pipfile --dev
+RUN pipenv install --system --deploy --ignore-pipfile
 
 VOLUME [ "/app/data" ]
 
