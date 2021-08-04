@@ -131,7 +131,7 @@ async def thought_of_the_day():
             break
 
     embed = Embed(
-        description=bot.thought_of_the_day,
+        description='This should work',
         title='Thought of the day',
         color=Color.blue()
     )
