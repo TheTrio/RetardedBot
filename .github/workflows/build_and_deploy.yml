@@ -1,4 +1,4 @@
-name: Test, Build and Deploy Discord Bot
+name: Build and Deploy Discord Bot
 
 on:
   push:
