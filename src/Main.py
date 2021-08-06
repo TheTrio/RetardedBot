@@ -240,7 +240,7 @@ async def vc(ctx, arg=None):
 @bot.command()
 async def busy(ctx):
     '''
-    Displays a list of the 5 people who have spent 
+    Displays a list of the 5 people who have spent
     the most time in the VC
     '''
     embed = Embed(
