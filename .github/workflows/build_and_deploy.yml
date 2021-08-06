@@ -3,6 +3,8 @@ name: Build and Deploy Discord Bot
 on:
   push:
     branches: [main]
+  paths-ignore:
+      - '**/README.md'
 
 jobs:
   testing:
