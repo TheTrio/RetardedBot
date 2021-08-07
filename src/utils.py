@@ -118,7 +118,7 @@ class Utils:
         return before.channel is not None and after.channel is None
 
     @staticmethod
-    def convert_to_human_time(time: dict):
+    def convert_to_human_time(time: timedelta):
         '''Converts a time delta object to human readable time'''
         days = time.days
         seconds = time.seconds
