@@ -5,4 +5,3 @@ __pycache__
 .pytest_cache
 data
 logs.txt
-docker-deploy.yaml
